@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वतंत्रता दिवस 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --saffron: #FF9933;
+            --white: #FFFFFF;
+            --green: #138808;
+            --navy: #000080;
+            --dark-blue: #00008B;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            animation: fadeInDown 1.5s;
+        }
+
+        .header-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 2px solid gold;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: gold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .greeting {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--white);
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 10px var(--saffron);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .start-btn {
+            background: linear-gradient(to right, var(--saffron), gold);
+            color: var(--dark-blue);
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s;
+            font-weight: bold;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .start-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.6s;
+        }
+
+        .start-btn:hover::after {
+            left: 120%;
+        }
+
+        /* Options Grid */
+        .options-container {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .option-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s;
+            cursor: pointer;
+            border: 3px solid transparent;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .option-box:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: var(--saffron);
+        }
+
+        .option-box h2 {
+            color: var(--dark-blue);
+            margin: 10px 0;
+            font-size: 1.6rem;
+            z-index: 2;
+        }
+
+        .option-box p {
+            color: #555;
+            font-size: 1.1rem;
+            z-index: 2;
+        }
+
+        .option-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--saffron), var(--green));
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 30, 0.95);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 40px 20px;
+            animation: fadeIn 0.8s;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+            position: relative;
+            color: #333;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--saffron);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            background: var(--green);
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-blue);
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--saffron), var(--green));
+            border-radius: 2px;
+        }
+
+        /* Flag Animation */
+        .flag-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .flag {
+            width: 350px;
+            height: 230px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .saffron {
+            height: 33.33%;
+            background-color: var(--saffron);
+        }
+
+        .white {
+            height: 33.33%;
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .green {
+            height: 33.33%;
+            background-color: var(--green);
+        }
+
+        .chakra {
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--navy);
+            border-radius: 50%;
+            position: relative;
+            animation: rotate 20s linear infinite;
+        }
+
+        .spoke {
+            position: absolute;
+            width: 3px;
+            height: 35px;
+            background-color: var(--navy);
+            top: 50%;
+            left: 50%;
+            transform-origin: top center;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Flag Hoisting Simulation */
+        .hoisting-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .pole {
+            width: 20px;
+            height: 500px;
+            background: linear-gradient(to right, #8B4513, #A0522D, #8B4513);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .hoisting-flag {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            width: 300px;
+            height: 0;
+            overflow: hidden;
+            transition: height 20s linear;
+        }
+
+        .hoist-btn {
+            background: linear-gradient(to right, var(--saffron), var(--green));
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .hoist-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* About Me Section */
+        .about-me {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            color: #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-me::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--saffron), var(--white), var(--green));
+        }
+
+        .about-content {
+            padding-left: 20px;
+        }
+
+        .about-content p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .special-effect {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .effect-btn {
+            background: linear-gradient(to right, var(--saffron), var(--green));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .effect-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .effect-text {
+            font-size: 2rem;
+            color: var(--saffron);
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+            animation: colorChange 3s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: var(--saffron); }
+            25% { color: var(--green); }
+            50% { color: var(--navy); }
+            75% { color: gold; }
+            100% { color: var(--saffron); }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Balloon Game */
+        .balloon-game-container {
+            margin: 40px 0;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 1.8rem;
+            color: var(--saffron);
+            font-weight: bold;
+        }
+
+        .balloon-game {
+            height: 500px;
+            background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--saffron);
+        }
+
+        .balloon {
+            position: absolute;
+            width: 70px;
+            height: 90px;
+            border-radius: 50%;
+            bottom: -100px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), transparent 70%);
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2);
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 50px;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: red;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255,0,0,0.5);
+            display: none;
+            text-align: center;
+        }
+
+        .game-over button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            background: var(--saffron);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin: 25px 0;
+        }
+        
+        .card h3 {
+            color: var(--navy);
+            border-bottom: 2px solid var(--saffron);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .grid-item {
+            background: linear-gradient(135deg, #f5f7fa, #e4e7f0);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .grid-item i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--saffron);
+        }
+        
+        .ecard-preview {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ecard-preview::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1614851099511-773084f6911d?auto=format&fit=crop&w=1200') no-repeat center/cover;
+            opacity: 0.2;
+        }
+        
+        .ecard-title {
+            font-size: 2.5rem;
+            color: var(--navy);
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .ecard-message {
+            font-size: 1.4rem;
+            color: var(--saffron);
+            margin: 20px 0;
+            z-index: 2;
+            font-weight: 500;
+        }
+        
+        .ecard-flag {
+            width: 250px;
+            height: 150px;
+            background: linear-gradient(to bottom, var(--saffron) 33%, var(--white) 33%, var(--white) 66%, var(--green) 66%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .ecard-chakra {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--navy);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .story-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid var(--saffron);
+        }
+        
+        .story-card h4 {
+            color: var(--navy);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        
+        .story-card p {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .greeting { font-size: 1.5rem; }
+            .start-btn { font-size: 1.5rem; padding: 15px 40px; }
+            .section-title { font-size: 2rem; }
+            .content-inner { padding: 30px 20px; }
+            .flag { width: 280px; height: 180px; }
+            .chakra { width: 50px; height: 50px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .greeting { font-size: 1.2rem; }
+            .option-box h2 { font-size: 1.4rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>स्वतंत्रता दिवस 2025</h1>
+                <div class="greeting">
+                    जय हिन्द! स्वतंत्रता दिवस की हार्दिक शुभकामनाएं!
+                </div>
+                <button class="start-btn" onclick="startApp()">
+                    <i class="fas fa-play"></i> शुरू करें
+                </button>
+            </div>
+        </header>
+
+        <div class="options-container" id="optionsContainer">
+            <!-- Options will be generated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content-section" id="contentSection">
+        <button class="back-btn" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="content-inner" id="contentInner">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // App data
+        const appData = {
+            year: "2025",
+            options: [
+                {
+                    id: 1,
+                    title: "Digital District Showcase",
+                    subtitle: "आपके जिले का 'One District, One Product' देखें",
+                    content: `
+                        <h2 class="section-title">Digital District Showcase</h2>
+                        <p>चूरू जिले का विशेष उत्पाद: चूरू का प्रसिद्ध App </p>
+                        <div style="max-width: 600px; margin: 30px auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="width: 100%; height: 300px; background: linear-gradient(45deg, #FF9933, #FFFFFF, #138808); display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; color: #000080;">
+                                CHURU 311 APP
+                            </div>
+                        </div>
+                        <p style="font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
+                            Churu 311 ऐप चूरू (राजस्थान) के नागरिकों के लिए बनाया गया एक डिजिटल प्लेटफॉर्म है, जिसके जरिए लोग नगर सेवाओं और जलदाय विभाग से जुड़ी समस्याओं की शिकायतें सीधे अपने मोबाइल से दर्ज करा सकते हैं। इस ऐप में पहले से ही नगरीय और ग्रामीण विकास से जुड़ी सुविधाएं उपलब्ध थीं, लेकिन अब इसमें पीएचईडी (जलदाय विभाग) की सेवाएं भी शामिल कर दी गई हैं, जैसे गलत पानी के बिल में सुधार, खराब मीटर बदलवाना, अवैध कनेक्शन हटवाना, पानी ना आने या कम दबाव की शिकायत, पाइप लाइन लीकिंग, नया नल कनेक्शन, जल टैंकर सुविधा में कमी, गड्ढों की मरम्मत, हैंडपंप ठीक करवाना और गंदे पानी की समस्या का समाधान। ऐप का उद्देश्य शिकायत प्रक्रिया को डिजिटल और पारदर्शी बनाना है, ताकि समस्याओं का समाधान तेजी से और जवाबदेही के साथ हो सके। इसकी कार्यप्रणाली सरल है—उपयोगकर्ता फोटो खींचकर, समस्या की श्रेणी चुनकर और संक्षिप्त विवरण लिखकर शिकायत सबमिट कर सकते हैं। यह Open311 API पर आधारित है और लोकेशन-सेंसिटिव फीचर के साथ आता है, जिससे शिकायत की सटीक जगह की पहचान संभव होती है। इसे पूर्व मंत्री राजेंद्र राठौड़ और जिला कलेक्टर अभिषेक सुराणा ने लॉन्च किया, ताकि नागरिक सेवाओं की गुणवत्ता और प्रशासनिक दक्षता में सुधार हो सके।
+  
+
+ आप भी डाउनलोड करे!
+                        </p>
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="https://play.google.com/store/apps/details?id=com.everythingcivic.churu" target="_blank" style="display: inline-block; background: linear-gradient(to right, #FF9933, #138808); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                                <i class="fas fa-download"></i> ऐप डाउनलोड करें
+                            </a>
+                        </div>
+                    `
+                },
+                {
+                    id: 2,
+                    title: "Mission Tiranga Campaign",
+                    subtitle: "घर-घर तिरंगा लगाने का डिजिटल कैम्पेन",
+                    content: `
+                        <h2 class="section-title">Mission Tiranga Campaign</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            घर-घर तिरंगा अभियान में भाग लें और अपनी फोटो साझा करें
+                        </p>
+                        <div style="max-width: 600px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #FF9933, #FFFFFF, #138808); display: flex; justify-content: center; align-items: center; flex-direction: column; color: #000080;">
+                                <i class="fas fa-camera" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                                <h3 style="font-size: 2rem;">तिरंगा फोटो</h3>
+                                <p style="font-size: 1.2rem; margin-top: 10px;">अपना फोटो अपलोड करें</p>
+                            </div>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 25px; border-radius: 15px; max-width: 600px; margin: 30px auto;">
+                            <h3 style="text-align: center; color: #000080; margin-bottom: 20px;">अपनी तिरंगा फोटो अपलोड करें</h3>
+                            <input type="file" id="tirangaPhoto" accept="image/*" style="display: block; width: 100%; padding: 15px; margin: 15px 0; border: 2px dashed #138808; border-radius: 10px; background-color: white;">
+                            <textarea id="tirangaMessage" placeholder="देशभक्ति संदेश लिखें..." style="width: 100%; padding: 15px; margin: 15px 0; border-radius: 10px; border: 2px solid #FF9933; min-height: 100px; font-size: 1.1rem;"></textarea>
+                            <button onclick="uploadPhoto()" style="display: block; width: 100%; padding: 15px; background: linear-gradient(to right, #FF9933, #138808); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer;">
+                                <i class="fas fa-upload"></i> अपलोड करें
+                            </button>
+                        </div>
+                        <div id="gallery" style="margin-top: 40px;">
+                            <h3 style="text-align: center; color: #000080; font-size: 1.8rem; margin-bottom: 25px;">प्रतिभागियों की गैलरी</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;" id="photoGallery">
+                                <!-- Photos will be added here dynamically -->
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 3,
+                    title: "Indian Flag Animation",
+                    subtitle: "एनिमेटेड तिरंगा देखें",
+                    content: `
+                        <h2 class="section-title">Indian Flag Animation</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            भारत के गौरवशाली तिरंगे को एनिमेशन के साथ देखें
+                        </p>
+                        <div class="flag-container">
+                            <div class="flag">
+                                <div class="saffron"></div>
+                                <div class="white">
+                                    <div class="chakra" id="chakra">
+                                        <!-- Spokes will be added by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="green"></div>
+                            </div>
+                        </div>
+                        <div style="max-width: 800px; margin: 40px auto; background: rgba(255, 255, 255, 0.9); padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                            <h3 style="color: #000080; text-align: center; margin-bottom: 20px;">तिरंगे के रंगों का महत्व</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                <div style="background: #FF9933; padding: 20px; border-radius: 10px; color: white; text-align: center;">
+                                    <h4 style="font-size: 1.4rem; margin-bottom: 10px;">केसरिया</h4>
+                                    <p>ताकत और साहस का प्रतीक</p>
+                                </div>
+                                <div style="background: #FFFFFF; padding: 20px; border-radius: 10px; border: 2px solid #138808; text-align: center;">
+                                    <h4 style="font-size: 1.4rem; margin-bottom: 10px; color: #000080;">सफेद</h4>
+                                    <p>शांति और सच्चाई का प्रतीक</p>
+                                </div>
+                                <div style="background: #138808; padding: 20px; border-radius: 10px; color: white; text-align: center;">
+                                    <h4 style="font-size: 1.4rem; margin-bottom: 10px;">हरा</h4>
+                                    <p>उर्वरता, विकास और भूमि की पवित्रता का प्रतीक</p>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 4,
+                    title: "Flag Hoisting Simulation",
+                    subtitle: "वर्चुअल फ्लैग होस्टिंग का अनुभव",
+                    content: `
+                        <h2 class="section-title">Flag Hoisting Simulation</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            वर्चुअल झंडा फहराने का अनुभव लें
+                        </p>
+                        <div class="hoisting-container">
+                            <div class="pole">
+                                <div class="hoisting-flag" id="hoistingFlag">
+                                    <div style="width: 300px; height: 200px; position: relative;">
+                                        <div style="height: 33.33%; background-color: #FF9933;"></div>
+                                        <div style="height: 33.33%; background-color: #FFFFFF; display: flex; justify-content: center; align-items: center;">
+                                            <div style="width: 50px; height: 50px; border: 3px solid navy; border-radius: 50%; position: relative; animation: rotate 20s linear infinite;">
+                                                <!-- Spokes would be added similarly -->
+                                            </div>
+                                        </div>
+                                        <div style="height: 33.33%; background-color: #138808;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="hoist-btn" onclick="hoistFlag()">
+                                <i class="fas fa-flag"></i> झंडा फहराएं
+                            </button>
+                            <audio id="nationalAnthem" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+                            <p style="margin-top: 20px; font-size: 1.1rem; color: white; background: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 50px;">
+                                झंडा फहराते समय खड़े हो जाएं और सम्मान प्रकट करें
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    id: 5,
+                    title: "Independence Day Quiz Game",
+                    subtitle: "स्वतंत्रता दिवस क्विज खेलें",
+                    content: `
+                        <h2 class="section-title">Independence Day Quiz Game</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            भारतीय स्वतंत्रता संग्राम से जुड़े प्रश्नों का उत्तर दें
+                        </p>
+                        <div id="quizContainer" style="max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                            <div id="question" style="font-size: 1.4rem; font-weight: bold; margin-bottom: 30px; color: #000080;"></div>
+                            <div id="options" style="display: grid; gap: 15px;">
+                                <!-- Options will be added by JavaScript -->
+                            </div>
+                            <button onclick="nextQuestion()" id="nextBtn" style="display: none; width: 100%; padding: 15px; margin-top: 30px; background: linear-gradient(to right, #FF9933, #138808); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer;">
+                                अगला प्रश्न <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div id="result" style="margin-top: 30px; text-align: center; font-size: 1.8rem; font-weight: bold; color: #FF9933;"></div>
+                    `
+                },
+                {
+                    id: 6,
+                    title: "Interactive Website",
+                    subtitle: "इंटरैक्टिव स्वतंत्रता दिवस वेबसाइट",
+                    content: `
+                        <h2 class="section-title">Interactive Website</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            स्वतंत्रता दिवस का इंटरैक्टिव अनुभव
+                        </p>
+                        
+                        <div class="card">
+                            <h3>भारत की आजादी की यात्रा</h3>
+                            <p style="line-height: 1.8; margin-bottom: 20px;">
+                                इस इंटरैक्टिव वेबसाइट में आप भारत की स्वतंत्रता के इतिहास की यात्रा पर निकल सकते हैं। 
+                                विभिन्न ऐतिहासिक घटनाओं, स्वतंत्रता सेनानियों और महत्वपूर्ण आंदोलनों के बारे में जानें।
+                            </p>
+                            
+                            <div class="interactive-grid">
+                                <div class="grid-item" onclick="showInteractiveContent(1)">
+                                    <i class="fas fa-monument"></i>
+                                    <h4>ऐतिहासिक स्थल</h4>
+                                    <p>भारत के स्वतंत्रता से जुड़े ऐतिहासिक स्थलों की 3D यात्रा</p>
+                                </div>
+                                <div class="grid-item" onclick="showInteractiveContent(2)">
+                                    <i class="fas fa-book-open"></i>
+                                    <h4>इतिहास की कहानियाँ</h4>
+                                    <p>स्वतंत्रता संग्राम की रोचक कहानियाँ और तथ्य</p>
+                                </div>
+                                <div class="grid-item" onclick="showInteractiveContent(3)">
+                                    <i class="fas fa-video"></i>
+                                    <h4>दुर्लभ वीडियो</h4>
+                                    <p>आजादी के समय के दुर्लभ वीडियो और ऑडियो क्लिप</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>वर्चुअल स्वतंत्रता दिवस समारोह</h3>
+                            <p style="line-height: 1.8; margin-bottom: 20px;">
+                                हमारे वर्चुअल समारोह में शामिल हों जहाँ आप ऑनलाइन झंडा फहरा सकते हैं, 
+                                राष्ट्रगान गा सकते हैं और स्वतंत्रता दिवस के उत्सव में भाग ले सकते हैं।
+                            </p>
+                            
+                            <div style="text-align: center; margin: 30px 0;">
+                                <button style="background: linear-gradient(to right, #FF9933, #138808); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                                    <i class="fas fa-calendar-check"></i> समारोह में शामिल हों
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>देशभक्ति गीत संग्रह</h3>
+                            <p style="line-height: 1.8; margin-bottom: 20px;">
+                                भारत के सर्वश्रेष्ठ देशभक्ति गीतों का संग्रह सुनें। 
+                                अपने पसंदीदा गीतों को प्लेलिस्ट में जोड़ें और देशभक्ति की भावना को महसूस करें।
+                            </p>
+                            
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+                                <div style="width: 150px; text-align: center;">
+                                    <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #FF9933, #138808); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-music" style="font-size: 3rem; color: white;"></i>
+                                    </div>
+                                    <p>वंदे मातरम</p>
+                                </div>
+                                <div style="width: 150px; text-align: center;">
+                                    <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #138808, #FF9933); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-music" style="font-size: 3rem; color: white;"></i>
+                                    </div>
+                                    <p>ऐ मेरे वतन के लोगो</p>
+                                </div>
+                                <div style="width: 150px; text-align: center;">
+                                    <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #000080, #138808); border-radius: 10px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-music" style="font-size: 3rem; color: white;"></i>
+                                    </div>
+                                    <p>सारे जहाँ से अच्छा</p>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 7,
+                    title: "Create Independence Day E-cards",
+                    subtitle: "डिजिटल ग्रीटिंग कार्ड बनाएं",
+                    content: `
+                        <h2 class="section-title">Create Independence Day E-cards</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            स्वतंत्रता दिवस के लिए खूबसूरत ई-कार्ड बनाएं और शेयर करें
+                        </p>
+                        
+                        <div class="ecard-preview">
+                            <div class="ecard-title" contenteditable="true">स्वतंत्रता दिवस की शुभकामनाएं!</div>
+                            <div class="ecard-message" contenteditable="true">जय हिन्द! जय भारत!</div>
+                            <div class="ecard-flag">
+                                <div class="ecard-chakra"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                            <div>
+                                <h3 style="color: #000080; margin-bottom: 15px;">कार्ड डिजाइन चुनें</h3>
+                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #FF9933, #138808); border-radius: 10px; cursor: pointer; border: 2px solid #000080;"></div>
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #000080, #138808); border-radius: 10px; cursor: pointer;"></div>
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #FF9933, #000080); border-radius: 10px; cursor: pointer;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #000080; margin-bottom: 15px;">संदेश अनुकूलित करें</h3>
+                                <textarea style="width: 100%; padding: 15px; border-radius: 10px; border: 2px solid #FF9933; min-height: 120px; font-size: 1.1rem;" placeholder="अपना संदेश यहाँ लिखें..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button style="background: linear-gradient(to right, #FF9933, #138808); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; margin-right: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                                <i class="fas fa-download"></i> कार्ड डाउनलोड करें
+                            </button>
+                            <button style="background: linear-gradient(to right, #000080, #138808); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                                <i class="fas fa-share-alt"></i> शेयर करें
+                            </button>
+                        </div>
+                        
+                        <div class="card" style="margin-top: 40px;">
+                            <h3>पूर्व-निर्मित टेम्पलेट</h3>
+                            <p style="margin-bottom: 20px;">हमारे खूबसूरत टेम्पलेट में से चुनें और तुरंत कार्ड बनाएं</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                                <div style="height: 150px; background: linear-gradient(45deg, #FF9933, #FFFFFF, #138808); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <i class="fas fa-flag" style="font-size: 2rem; color: #000080;"></i>
+                                </div>
+                                <div style="height: 150px; background: linear-gradient(45deg, #000080, #FFFFFF, #138808); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <i class="fas fa-feather-alt" style="font-size: 2rem; color: #FF9933;"></i>
+                                </div>
+                                <div style="height: 150px; background: linear-gradient(45deg, #138808, #FFFFFF, #FF9933); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <i class="fas fa-fort-awesome" style="font-size: 2rem; color: #000080;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 8,
+                    title: "Storytelling Through Coding",
+                    subtitle: "आज़ादी की इंटरैक्टिव कहानियां",
+                    content: `
+                        <h2 class="section-title">Storytelling Through Coding</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            कोडिंग के माध्यम से भारत की आजादी की कहानी सुनें
+                        </p>
+                        
+                        <div class="card">
+                            <h3>भारत की स्वतंत्रता की यात्रा</h3>
+                            <p style="margin-bottom: 20px;">
+                                इस इंटरैक्टिव अनुभव में, आप भारत की स्वतंत्रता के महत्वपूर्ण पलों की यात्रा करेंगे। 
+                                प्रत्येक घटना को एनिमेशन, इंटरैक्टिव तत्वों और कोडिंग के माध्यम से प्रस्तुत किया गया है।
+                            </p>
+                            
+                            <div style="text-align: center; margin: 25px 0;">
+                                <button style="background: linear-gradient(to right, #FF9933, #138808); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                                    <i class="fas fa-play-circle"></i> यात्रा शुरू करें
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <h4>1857 का प्रथम स्वतंत्रता संग्राम</h4>
+                            <p>
+                                भारत के स्वतंत्रता संग्राम का पहला बड़ा संगठित विद्रोह। मंगल पांडे, रानी लक्ष्मीबाई, 
+                                तात्या टोपे जैसे वीरों ने इस विद्रोह में अग्रणी भूमिका निभाई। इस खंड में आप 
+                                विद्रोह के दृश्यों को इंटरैक्टिव मानचित्र पर देख सकते हैं।
+                            </p>
+                        </div>
+                        
+                        <div class="story-card">
+                            <h4>महात्मा गांधी और अहिंसा आंदोलन</h4>
+                            <p>
+                                मोहनदास करमचंद गांधी, जिन्हें महात्मा गांधी के नाम से जाना जाता है, ने अहिंसा के मार्ग पर चलकर 
+                                भारत को स्वतंत्रता दिलाने में महत्वपूर्ण भूमिका निभाई। असहयोग आंदोलन, नमक सत्याग्रह और 
+                                भारत छोड़ो आंदोलन जैसे महत्वपूर्ण आंदोलनों के बारे में जानें।
+                            </p>
+                        </div>
+                        
+                        <div class="story-card">
+                            <h4>1947 - आजादी का सुनहरा दिन</h4>
+                            <p>
+                                15 अगस्त 1947 को भारत ने ब्रिटिश शासन से स्वतंत्रता प्राप्त की। पंडित जवाहरलाल नेहरू ने 
+                                दिल्ली के लाल किले पर तिरंगा फहराया और 'ट्रिस्ट विद डेस्टिनी' (नियति से साक्षात्कार) नामक 
+                                ऐतिहासिक भाषण दिया। इस खंड में आप उस ऐतिहासिक दिन को वर्चुअल रूप से अनुभव कर सकते हैं।
+                            </p>
+                        </div>
+                        
+                        <div class="card" style="margin-top: 40px;">
+                            <h3>स्वतंत्रता सेनानियों के बारे में जानें</h3>
+                            <p style="margin-bottom: 20px;">
+                                भारत की आजादी में योगदान देने वाले महान नेताओं और स्वतंत्रता सेनानियों के बारे में जानें। 
+                                प्रत्येक नेता के जीवन पर इंटरैक्टिव कहानियाँ और कोडिंग प्रोजेक्ट देखें।
+                            </p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 25px;">
+                                <div style="text-align: center;">
+                                    <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #FF9933, #000080); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-user" style="font-size: 2.5rem; color: white;"></i>
+                                    </div>
+                                    <h4>भगत सिंह</h4>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #138808, #000080); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-user" style="font-size: 2.5rem; color: white;"></i>
+                                    </div>
+                                    <h4>सुभाष चंद्र बोस</h4>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #FF9933, #138808); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-user" style="font-size: 2.5rem; color: white;"></i>
+                                    </div>
+                                    <h4>सरदार पटेल</h4>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 9,
+                    title: "About Me",
+                    subtitle: "जितू भाई के बारे में",
+                    content: `
+                        <h2 class="section-title">About Me</h2>
+                        <div class="about-me">
+                            <div class="about-content">
+                                <p><strong>Name:</strong> JITU BHAI</p>
+                                <p><strong>Class:</strong> college 1th year</p>
+                                <p><strong>Collage:</strong> MJD (Maa jalpa Devi College taranagar)</p>
+                                <p><strong>Age:</strong> 16</p>
+                                <p><strong>District:</strong> Churu</p>
+                                <p><strong>Bio:</strong> मेरा पूरा नाम जितेंद्र है। मुझे कविताएं लिखना ऐप बनाना और वेबसाइट क्रिएट करना अच्छा लगता है। अभी तक मैं दो-तीन अप बना भी चुका हूं कई वेबसाइट बनाई है और कुछ कविताएं लिखी भी है और मैं अब कॉलेज स्टूडेंट बन चुका हूं । कोड योगी मैं मैने बहुत कुछ सीखा है। सभी टीचर्स और स्टूडेंट का धन्यवाद! My poem</p>
+<P>   <h5> ❤️ 4. भारत के वीर सपूत ❤️</h5>
+
+
+
+
+जय भारत के वीर सपूतो, हर साँस में तुम्हारा नाम रहे।
+तुम जीवित हो हर दिल में, जब तक है धरा, यह धाम रहे।।
+
+रण में गूँजा शंख पुकार, बढ़ता हुआ भारत का सत्कार।
+धरती बोली "मेरे लाल चलो", अन्याय के विरुद्ध प्रहार करो।।
+
+जो छुप-छुप कर करता हमले, हमने उसे जला दिया।
+हर सीमा पर था सन्नाटा, जब भारत ने जवाब दिया।।
+
+हर दीप बनाए रखते शांति, ज्वाला बन जाए कभी क्रांति।
+सीमा पर जो प्रकोप दिखाए, भस्म करके धूल उड़ाए।।
+
+हमने ना की शुरुआत कभी, पीछे हटने का नाम नहीं।
+तिरंगे की शान के खातिर, मृत्यु भी लगती है सही।।
+
+छल, धोखे का न पथ हमारा, देश की रक्षा करते हैं।
+देश पर मंडराया खतरा जहाँ, खड़े लड़े बन ढाल वहाँ।।
+
+माँ की गोदी सूनी पड़ी, पर गर्व से ऊँचा सिर रहा।
+सैनिकों के भी भाग्य बने, शहीद होकर अमर रहे।।
+
+इस मिट्टी को जीवन बनाकर, दुष्टों से आज़ादी दिलाकर।
+भारत भी बना महान, जब कण-कण में है उनका बलिदान।।
+
+जहाँ वीरता की हो पहचान,
+वहाँ दिखता भारत महान।।
+</P>
+                            </div>
+                        </div>
+                        <div class="special-effect">
+                            <button class="effect-btn" onclick="showSpecialEffect()">
+                                <i class="fas fa-magic"></i> विशेष प्रभाव देखें
+                            </button>
+                            <div class="effect-text" id="effectText">
+                                जय हिन्द! जय भारत!
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 10,
+                    title: "Balloon Crack Game",
+                    subtitle: "बैलून फोड़ने का मजेदार गेम",
+                    content: `
+                        <h2 class="section-title">Balloon Crack Game</h2>
+                        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                            बैलून फोड़ें और स्कोर बनाएं! काले बैलून न फोड़ें!
+                        </p>
+                        <div class="balloon-game-container">
+                            <div class="game-header">
+                                <div class="score">स्कोर: <span id="score">0</span></div>
+                                <button onclick="startGame()" style="background: linear-gradient(to right, #FF9933, #138808); color: white; border: none; padding: 10px 25px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
+                                    <i class="fas fa-play"></i> गेम शुरू करें
+                                </button>
+                            </div>
+                            <div class="balloon-game" id="balloonGame">
+                                <div class="game-over" id="gameOver">
+                                    गेम ओवर!<br>
+                                    <span id="finalScore">स्कोर: 0</span><br>
+                                    <button onclick="startGame()">फिर से खेलें</button>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            ]
+        };
+
+        // Start the app
+        function startApp() {
+            document.querySelector('.start-btn').style.display = 'none';
+            document.querySelector('.greeting').innerHTML = 'स्वतंत्रता दिवस 2025 की हार्दिक शुभकामनाएं!<br>नीचे दिए गए विकल्पों में से चुनें';
+            document.getElementById('optionsContainer').style.display = 'grid';
+            
+            // Generate options
+            const optionsContainer = document.getElementById('optionsContainer');
+            appData.options.forEach(option => {
+                const optionBox = document.createElement('div');
+                optionBox.className = 'option-box';
+                optionBox.onclick = () => showContent(option.id);
+                optionBox.innerHTML = `
+                    <h2>${option.title}</h2>
+                    <p>${option.subtitle}</p>
+                `;
+                optionsContainer.appendChild(optionBox);
+            });
+            
+            // Add animation to greeting
+            const greeting = document.querySelector('.greeting');
+            greeting.style.animation = 'none';
+            setTimeout(() => {
+                greeting.style.animation = 'pulse 2s infinite';
+            }, 10);
+        }
+
+        // Show content in full page
+        function showContent(optionId) {
+            const option = appData.options.find(opt => opt.id === optionId);
+            if (!option) return;
+            
+            const contentSection = document.querySelector('.content-section');
+            const contentInner = document.getElementById('contentInner');
+            
+            contentInner.innerHTML = option.content;
+            contentSection.style.display = 'block';
+            
+            // Special initialization for some sections
+            if (optionId === 3) {
+                initializeFlagAnimation();
+            } else if (optionId === 5) {
+                initializeQuiz();
+            } else if (optionId === 4) {
+                // Reset flag hoisting
+                document.getElementById('hoistingFlag').style.height = '0';
+            } else if (optionId === 10) {
+                // Reset balloon game
+                document.getElementById('balloonGame').innerHTML = '';
+                document.getElementById('gameOver').style.display = 'none';
+            }
+        }
+
+        // Go back to main menu
+        function goBack() {
+            document.querySelector('.content-section').style.display = 'none';
+        }
+
+        // Initialize flag animation
+        function initializeFlagAnimation() {
+            const chakra = document.getElementById('chakra');
+            if (!chakra) return;
+            
+            chakra.innerHTML = '';
+            
+            // Create 24 spokes for Ashoka Chakra
+            for (let i = 0; i < 24; i++) {
+                const spoke = document.createElement('div');
+                spoke.className = 'spoke';
+                spoke.style.transform = `translate(-50%, -50%) rotate(${i * 15}deg)`;
+                chakra.appendChild(spoke);
+            }
+        }
+
+        // Flag hoisting simulation
+        function hoistFlag() {
+            const flag = document.getElementById('hoistingFlag');
+            const audio = document.getElementById('nationalAnthem');
+            
+            flag.style.height = '200px';
+            audio.play();
+        }
+
+        // Quiz game
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = [
+            {
+                question: "भारत छोड़ो आंदोलन किस साल हुआ?",
+                options: ["1942", "1930", "1920", "1947"],
+                answer: 0
+            },
+            {
+                question: "भारत के पहले प्रधानमंत्री कौन थे?",
+                options: ["लाल बहादुर शास्त्री", "जवाहरलाल नेहरू", "सरदार पटेल", "महात्मा गांधी"],
+                answer: 1
+            },
+            {
+                question: "स्वतंत्रता दिवस पर भारत के प्रधानमंत्री कहाँ झंडा फहराते हैं?",
+                options: ["इंडिया गेट", "लाल किला", "राष्ट्रपति भवन", "जंतर मंतर"],
+                answer: 1
+            }
+        ];
+
+        function initializeQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('result').innerHTML = '';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestion >= questions.length) {
+                document.getElementById('question').innerHTML = 'क्विज समाप्त!';
+                document.getElementById('options').innerHTML = '';
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('result').innerHTML = `आपका स्कोर: ${score} / ${questions.length}`;
+                return;
+            }
+            
+            const q = questions[currentQuestion];
+            document.getElementById('question').innerHTML = q.question;
+            
+            let optionsHtml = '';
+            q.options.forEach((option, index) => {
+                optionsHtml += `
+                    <div class="option" onclick="checkAnswer(${index})" style="padding: 15px; background-color: #f0f0f0; border-radius: 10px; cursor: pointer; border: 2px solid #ddd; transition: all 0.3s;">
+                        ${option}
+                    </div>
+                `;
+            });
+            
+            document.getElementById('options').innerHTML = optionsHtml;
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+
+        function checkAnswer(selectedIndex) {
+            const q = questions[currentQuestion];
+            const options = document.querySelectorAll('#options .option');
+            
+            options.forEach((option, index) => {
+                if (index === q.answer) {
+                    option.style.backgroundColor = '#c8e6c9';
+                    option.style.borderColor = '#138808';
+                }
+                option.style.cursor = 'default';
+                option.onclick = null;
+            });
+            
+            if (selectedIndex === q.answer) {
+                score++;
+            } else {
+                options[selectedIndex].style.backgroundColor = '#ffcdd2';
+                options[selectedIndex].style.borderColor = '#f44336';
+            }
+            
+            document.getElementById('nextBtn').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            showQuestion();
+        }
+
+        // Mission Tiranga - Upload photo
+        function uploadPhoto() {
+            const fileInput = document.getElementById('tirangaPhoto');
+            const message = document.getElementById('tirangaMessage').value;
+            
+            if (fileInput.files.length === 0) {
+                alert('कृपया एक फोटो चुनें');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const photoUrl = e.target.result;
+                
+                // Add photo to gallery
+                const gallery = document.getElementById('photoGallery');
+                gallery.innerHTML += `
+                    <div style="background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="${photoUrl}" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <p style="margin: 10px 0; font-size: 1rem; color: #555;">${message || 'देशभक्ति संदेश'}</p>
+                            <p style="font-size: 0.9rem; color: #888;">प्रतिभागी</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Reset form
+                fileInput.value = '';
+                document.getElementById('tirangaMessage').value = '';
+                
+                alert('फोटो सफलतापूर्वक अपलोड हो गई!');
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        // About Me special effect
+        function showSpecialEffect() {
+            const effectText = document.getElementById('effectText');
+            effectText.style.display = 'block';
+            
+            setTimeout(() => {
+                effectText.style.animation = 'colorChange 3s infinite';
+            }, 100);
+        }
+
+        // Balloon game
+        let gameScore = 0;
+        let gameInterval;
+        let gameActive = false;
+
+        function startGame() {
+            if (gameActive) return;
+            
+            gameActive = true;
+            gameScore = 0;
+            document.getElementById('score').textContent = '0';
+            document.getElementById('gameOver').style.display = 'none';
+            
+            const gameContainer = document.getElementById('balloonGame');
+            gameContainer.innerHTML = '';
+            
+            gameInterval = setInterval(createBalloon, 800);
+            
+            setTimeout(() => {
+                endGame();
+            }, 60000);
+        }
+
+        function createBalloon() {
+            if (!gameActive) return;
+            
+            const gameContainer = document.getElementById('balloonGame');
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            
+            const colors = ['#FF5252', '#4CAF50', '#2196F3', '#FFC107', '#9C27B0', '#00BCD4'];
+            const color = Math.random() < 0.1 ? '#000000' : colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.backgroundColor = color;
+            
+            const left = Math.random() * (gameContainer.offsetWidth - 70);
+            balloon.style.left = left + 'px';
+            
+            const duration = 3 + Math.random() * 7;
+            balloon.style.transition = `bottom ${duration}s linear`;
+            
+            balloon.onclick = function() {
+                if (color === '#000000') {
+                    endGame();
+                } else {
+                    gameScore++;
+                    document.getElementById('score').textContent = gameScore;
+                    gameContainer.removeChild(balloon);
+                    
+                    // Add explosion effect
+                    const explosion = document.createElement('div');
+                    explosion.style.position = 'absolute';
+                    explosion.style.left = left + 'px';
+                    explosion.style.bottom = balloon.style.bottom;
+                    explosion.style.width = '80px';
+                    explosion.style.height = '80px';
+                    explosion.style.background = 'radial-gradient(circle, #fff 0%, rgba(255,255,255,0) 70%)';
+                    explosion.style.borderRadius = '50%';
+                    explosion.style.animation = 'fadeOut 0.5s forwards';
+                    gameContainer.appendChild(explosion);
+                    
+                    setTimeout(() => {
+                        if (explosion.parentNode) {
+                            explosion.parentNode.removeChild(explosion);
+                        }
+                    }, 500);
+                }
+            };
+            
+            gameContainer.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.style.bottom = '500px';
+            }, 10);
+            
+            setTimeout(() => {
+                if (balloon.parentNode === gameContainer) {
+                    gameContainer.removeChild(balloon);
+                }
+            }, duration * 1000);
+        }
+
+        function endGame() {
+            gameActive = false;
+            clearInterval(gameInterval);
+            
+            document.getElementById('gameOver').style.display = 'block';
+            document.getElementById('finalScore').textContent = `स्कोर: ${gameScore}`;
+            
+            const balloons = document.querySelectorAll('.balloon');
+            balloons.forEach(balloon => {
+                balloon.style.transition = 'none';
+                balloon.style.bottom = '-100px';
+                
+                setTimeout(() => {
+                    if (balloon.parentNode) {
+                        balloon.parentNode.removeChild(balloon);
+                    }
+                }, 100);
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add keyframe for explosion effect
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fadeOut {
+                    from { opacity: 1; transform: scale(1); }
+                    to { opacity: 0; transform: scale(2); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
